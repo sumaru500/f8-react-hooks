@@ -13,11 +13,9 @@ jobs:
       DOCKER_TAG: latest
     executor: docker/docker
     steps:
-      - setup_remote_docker
-      - checkout
       - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
+          version: 19.03.13
+      - checkout
       - docker/check:
           docker-username: DOCKER_USERNAME
           docker-password: DOCKER_PASSWORD
